@@ -53,7 +53,7 @@ export default function Sidebar() {
 
 
   return <div className="sidebar_wrapper">
-    <button className="btn" onClick={toggleSidebarCollapseHandler}>
+    <button className="btns" onClick={toggleSidebarCollapseHandler}>
     <BiLeftArrowAlt/>
     </button>
     <aside className="sidebar" data-collapse ={isCollapsedSidebar}>
