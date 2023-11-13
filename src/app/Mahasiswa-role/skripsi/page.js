@@ -1,10 +1,10 @@
 import React from 'react'
 import BaseLayout from '@/components/BaseLayout/BaseLayout_mhs';
 
-export default function Pagw() {
+export default function Skripsi() {
   return (
     <BaseLayout>
-    <div>Mahasiswa-Role</div>
+    <div>Skripsi</div>
     </BaseLayout>
   )
 }

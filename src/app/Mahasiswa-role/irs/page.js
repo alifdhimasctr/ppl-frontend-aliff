@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import {BaseLayout} from "@/components/BaseLayout/BaseLayout_mhs";
 // import Navbar from "../Component/navbar";
 
 const EntryIrs = () => {

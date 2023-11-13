@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import Sidebar from './sidebar';
+import Sidebar_dpt from '../Sidebar/sidebar_dpt';
+import Header from '../header';
 
 interface Props{
     children: ReactNode | ReactNode[]; // ReactNode is a type that represents anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types.
@@ -8,8 +9,13 @@ interface Props{
 export default function BaseLayout({ children }: Props) {
     return (
         <div className='layout'>
-            <Sidebar/>
-            {children}
+            <Sidebar_dpt/> 
+            <div className="basecontainer">
+                <Header/>
+                <div className="maincontainer">
+                    {children}
+                </div>
+            </div>
         </div>
     );
 

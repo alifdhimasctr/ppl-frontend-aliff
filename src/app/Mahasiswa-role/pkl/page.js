@@ -1,4 +1,4 @@
-import BaseLayout from "@/components/BaseLayout";
+import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 import React from "react";
 // import Navbar from "../Component/navbar";
 

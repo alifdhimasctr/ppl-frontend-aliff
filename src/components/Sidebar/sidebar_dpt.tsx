@@ -3,48 +3,36 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MdDashboard } from "react-icons/md";
-import {PiStudentFill} from "react-icons/pi";
-import {PiChalkboardTeacherFill} from "react-icons/pi";
-import {FaSchool} from "react-icons/fa";
+import {MdManageAccounts} from "react-icons/md";
 import {BiLeftArrowAlt} from "react-icons/bi";
+import {IoCreate} from "react-icons/io5";
 
 
 const sidebarItems = [
   {
     name: "Dashboard",
     icon: MdDashboard,
-    link: "/",
+    link: "/Departemen-role",
   },
 
   {
-    name: "Mahasiswa",
-    icon: PiStudentFill,
-    link: "/mahasiswa",
+    name: "CreateAccount",
+    icon: IoCreate,
+    link: "/Departemen-role/create",
   },
 
   {
-    name: "Dosenwali",
-    icon: PiChalkboardTeacherFill,
-    link: "/dosenwali",
+    name: "ManageAccount",
+    icon: MdManageAccounts,
+    link: "/Departemen-role/manage",
   },
 
-  {
-    name: "Departemen",
-    icon: FaSchool,
-    link: "/departemen",
-  },
-
-  {
-    name: "Logout",
-    icon: MdDashboard,
-    link: "/",
-  },
 
    
 ];
 
 
-export default function Sidebar() {
+export default function Sidebar_dpt() {
   const [isCollapsedSidebar, setIsCollapseSidebar] = useState<boolean>(false);
 
   const toggleSidebarCollapseHandler = () => {
