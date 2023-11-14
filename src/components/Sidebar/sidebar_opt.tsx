@@ -6,25 +6,33 @@ import { MdDashboard } from "react-icons/md";
 import {MdManageAccounts} from "react-icons/md";
 import {BiLeftArrowAlt} from "react-icons/bi";
 import {IoCreate} from "react-icons/io5";
+import {RiAccountCircleFill} from "react-icons/ri";
 
 
 const sidebarItems = [
+
+  {
+    name: "Profile",
+    icon: RiAccountCircleFill,
+    link: "/opt/profile",
+  },
+
   {
     name: "Dashboard",
     icon: MdDashboard,
-    link: "/Departemen-role",
+    link: "/opt",
   },
 
   {
     name: "CreateAccount",
     icon: IoCreate,
-    link: "/Departemen-role/create",
+    link: "/opt/create",
   },
 
   {
     name: "ManageAccount",
     icon: MdManageAccounts,
-    link: "/Departemen-role/manage",
+    link: "/opt/manage",
   },
 
 

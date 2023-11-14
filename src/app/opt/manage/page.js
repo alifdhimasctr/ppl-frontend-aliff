@@ -1,11 +1,11 @@
 import React from 'react'
-import BaseLayout_dpt from '@/components/BaseLayout/BaseLayout_dpt'
+import BaseLayout_opt from '@/components/BaseLayout/BaseLayout_opt'
 
 export default function manage() {
   return (
-    <BaseLayout_dpt>
+    <BaseLayout_opt>
     Manage Account
-    </BaseLayout_dpt>
+    </BaseLayout_opt>
 
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
-import BaseLayout_dpt from '@/components/BaseLayout/BaseLayout_dpt'
+import BaseLayout_opt from '@/components/BaseLayout/BaseLayout_opt'
 
 export default function create() {
   return (
-    <BaseLayout_dpt>
+    <BaseLayout_opt>
     Create Account
-    </BaseLayout_dpt>
+    </BaseLayout_opt>
 
   )
 }
