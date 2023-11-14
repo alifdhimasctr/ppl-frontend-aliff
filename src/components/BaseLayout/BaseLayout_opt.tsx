@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Sidebar_dpt from '../Sidebar/sidebar_dpt';
+import Sidebar_dpt from '../Sidebar/sidebar_opt';
 import Header from '../header';
 
 interface Props{

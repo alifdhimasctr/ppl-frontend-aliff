@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import BaseLayout_dpt from "@/components/BaseLayout/BaseLayout_dpt";
+import BaseLayout_dpt from "@/components/BaseLayout/BaseLayout_opt";
 import { PiStudentFill } from "react-icons/pi";
 import { PiChalkboardTeacherFill } from "react-icons/pi";
 import { FaSchool } from "react-icons/fa";
