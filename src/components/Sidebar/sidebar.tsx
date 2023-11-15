@@ -6,7 +6,7 @@ import { MdDashboard } from "react-icons/md";
 import {PiStudentFill} from "react-icons/pi";
 import {PiChalkboardTeacherFill} from "react-icons/pi";
 import {FaSchool} from "react-icons/fa";
-import {BiLeftArrowAlt} from "react-icons/bi";
+import {FaArrowsLeftRight} from "react-icons/fa6";
 
 
 const sidebarItems = [
@@ -28,7 +28,7 @@ export default function Sidebar() {
 
   return <div className="sidebar_wrapper">
     <button className="btns" onClick={toggleSidebarCollapseHandler}>
-    <BiLeftArrowAlt/>
+    <FaArrowsLeftRight/>
     </button>
     <aside className="sidebar" data-collapse ={isCollapsedSidebar}>
       <div className="sidebar_top">

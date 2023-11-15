@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdDashboard } from "react-icons/md";
 import {MdManageAccounts} from "react-icons/md";
-import {BiLeftArrowAlt} from "react-icons/bi";
+import {FaArrowsLeftRight} from "react-icons/fa6";
 import {IoCreate} from "react-icons/io5";
 import {RiAccountCircleFill} from "react-icons/ri";
 
@@ -50,7 +50,7 @@ export default function Sidebar_dpt() {
 
   return <div className="sidebar_wrapper">
     <button className="btns" onClick={toggleSidebarCollapseHandler}>
-    <BiLeftArrowAlt/>
+    <FaArrowsLeftRight/>
     </button>
     <aside className="sidebar" data-collapse ={isCollapsedSidebar}>
       <div className="sidebar_top">

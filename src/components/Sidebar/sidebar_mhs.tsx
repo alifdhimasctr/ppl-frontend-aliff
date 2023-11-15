@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdDashboard } from "react-icons/md";
 import {BiSolidBookAdd} from "react-icons/bi";
-import {BiLeftArrowAlt} from "react-icons/bi";
+import {FaArrowsLeftRight} from "react-icons/fa6";
 import {BsFileEarmarkBarGraphFill} from "react-icons/bs";
 import {MdAddHomeWork} from "react-icons/md";
 import {GiGraduateCap} from "react-icons/gi";
@@ -54,7 +54,7 @@ export default function Sidebar() {
 
   return <div className="sidebar_wrapper">
     <button className="btns" onClick={toggleSidebarCollapseHandler}>
-    <BiLeftArrowAlt/>
+    <FaArrowsLeftRight/>
     </button>
     <aside className="sidebar" data-collapse ={isCollapsedSidebar}>
       <div className="sidebar_top">
