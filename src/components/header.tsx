@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <Navbar fluid rounded>
-      <div className="flex justify-end w-full md:order-2">
+      <div className="flex justify-end h-7 w-full md:order-2">
         <Dropdown
           className="flex justify-end"
           arrowIcon={false}
