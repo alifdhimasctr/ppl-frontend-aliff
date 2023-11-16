@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import {BaseLayout} from "@/components/BaseLayout/BaseLayout_mhs";
+import { BaseLayout } from "@/components/BaseLayout/BaseLayout_mhs";
 // import Navbar from "../Component/navbar";
 
 const EntryIrs = () => {
   const router = useRouter();
   const [irsData, setIrsData] = useState(null);
-  const [mahasiswaData, setMahasiswaData] = useState(null); // [1] 
+  const [mahasiswaData, setMahasiswaData] = useState(null); // [1]
   const [cookies, setCookie] = useCookies(["token"]);
 
   useEffect(() => {
@@ -35,9 +35,7 @@ const EntryIrs = () => {
       {/* <Navbar /> */}
       <main>
         <div className="m-10 container mx-auto bg-gray">
-          <h1 className="text-4xl font-semibold dark:text mt-5">
-            Entry IRS
-          </h1>
+          <h1 className="text-4xl font-semibold dark:text mt-5">Entry IRS</h1>
           <div className="flex mt-10 gap-10 bg-gray-300">
             <div className="item-center">
               <div className="container mx-auto bg-white p-4 rounded-lg text-center">
@@ -53,7 +51,7 @@ const EntryIrs = () => {
                 </div>
               </div>
             </div>
-            <div className="flex grow gap-10 bg-white border  rounded-lg shadow shadow-lg p-6">
+            <div className="flex grow gap-10 bg-white border  rounded-lg shadow-lg p-6">
               <div className=" w-full h-full">
                 <div className="mb-4">
                   <label className="label" htmlFor="semesterStudi">
@@ -67,14 +65,17 @@ const EntryIrs = () => {
                       type="text"
                       id="semesteraktif"
                       className="input input-bordered bg-white shadow-md w-full "
-                      
                     />
                   </div>
                 </div>
                 <div className="mb-4">
                   <label className="label" htmlFor="ipkSemester">
-                    <span className="label-text text-black text-2xl
-                    ">IPK Semester</span>
+                    <span
+                      className="label-text text-black text-2xl
+                    "
+                    >
+                      IPK Semester
+                    </span>
                   </label>
                   <div className="input-box">
                     <input
