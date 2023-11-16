@@ -1,6 +1,7 @@
 "use client";
 
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -25,11 +26,12 @@ export default function Header() {
               name@flowbite.com
             </span>
           </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item>
+            <Link href="/mhs/profile">Profile</Link>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Link href="/">Log Out</Link>
+          </Dropdown.Item>
         </Dropdown>
         <Navbar.Toggle />
       </div>

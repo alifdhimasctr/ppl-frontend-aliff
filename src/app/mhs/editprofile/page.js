@@ -1,16 +1,16 @@
 "use client";
-import React from "react";
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
-import Link from "next/link";
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 
-export default function Profile() {
+import React from "react";
+
+export default function editProfile() {
   return (
     <BaseLayout>
-      <div className="wrapper h-full w-full flex justify-center pt-10 pb-10">
+      <div className="wrapper h-full w-full flex justify-center pt-10">
         <div className="box-edit bg-[#f5f5f5] w-3/5 h-auto rounded-xl border-4 border-solid border-[#183D3D]">
           <h1 className="text-center mt-5 text-black font-semibold text-xl">
-            Profile Mahasiswa
+            Edit Profile
           </h1>
           <div className="gambar w-full flex justify-center mt-3">
             <img
@@ -21,9 +21,6 @@ export default function Profile() {
               height="250"
             />
           </div>
-          <Link href="/mhs/editprofile">
-            <p className="text-center mt-7 mb-7 text-sky-600">Edit Profile</p>
-          </Link>
           <div className="form mt-7 flex justify-center w-full">
             <form className="flex max-w-md flex-col gap-4 w-3/4 pb-11">
               <div>
@@ -34,7 +31,7 @@ export default function Profile() {
                   id="nama"
                   type="text"
                   placeholder="Nama Mahasiswa"
-                  disabled
+                  required
                 />
               </div>
 
@@ -58,7 +55,7 @@ export default function Profile() {
                   id="email"
                   type="email"
                   placeholder="bangkit@example.com"
-                  disabled
+                  required
                 />
               </div>
 
@@ -70,7 +67,7 @@ export default function Profile() {
                   id="telpon"
                   type="number"
                   placeholder="081234567890"
-                  disabled
+                  required
                 />
               </div>
 
@@ -122,7 +119,7 @@ export default function Profile() {
                 </div>
                 <select
                   id="provinsi"
-                  disabled
+                  required
                   className="border rounded-md p-2 w-full" // Menambahkan kelas w-full
                 >
                   <option value="" disabled selected hidden>
@@ -140,7 +137,7 @@ export default function Profile() {
                 </div>
                 <select
                   id="kabupaten"
-                  disabled
+                  required
                   className="border rounded-md p-2 w-full" // Menambahkan kelas w-full
                 >
                   <option value="" disabled selected hidden>
@@ -158,12 +155,14 @@ export default function Profile() {
                 </div>
                 <textarea
                   id="alamat"
-                  disabled
+                  required
                   className="border rounded-md p-2 w-full"
                   rows="4" // Jumlah baris pada text area
                   placeholder="Masukkan alamat Anda"
                 ></textarea>
               </div>
+
+              <Button type="submit">Simpan</Button>
             </form>
           </div>
         </div>
