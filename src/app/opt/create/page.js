@@ -8,7 +8,7 @@ const create = () => {
   const [nim, setNim] = useState("");
   const [nama, setNama] = useState("");
   const [angkatan, setAngkatan] = useState("");
-  const [status, setStatus] = useState("Aktif");
+  const [dosenWali, setDosenWali] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,14 +55,12 @@ const create = () => {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="status" className="text-black">Status</label>
-              <input
-                className="rounded-md bg-gray-200 drop-shadow-md text-black border-1 border-gray-300"
-                type="text"
-                id="status"
-                value="AKTIF"
-                disabled
-              />
+              <label htmlFor="dosenWali" className="text-black">Dosen Wali</label>
+              <select className="rounded-md drop-shadow-md text-black border-1 border-gray-300">
+                <option value="">Pilih Dosen Wali</option>
+                <option value="dosenWali">Dosen Wali1</option>
+                <option value="dosenWali">Dosen Wali2</option>
+              </select>
             </div>
             <button type="submit" className="bg-[#183D3D] text-white w-20 h-8 text-sm rounded-md">Submit</button>
           </div>

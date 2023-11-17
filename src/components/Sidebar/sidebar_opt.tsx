@@ -28,15 +28,6 @@ const sidebarItems = [
     icon: IoCreate,
     link: "/opt/create",
   },
-
-  {
-    name: "ManageAccount",
-    icon: MdManageAccounts,
-    link: "/opt/manage",
-  },
-
-
-   
 ];
 
 

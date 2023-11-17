@@ -15,7 +15,7 @@ export default function Header() {
             <Avatar
               className="mr-11"
               alt="User settings"
-              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+              img="/profil_photo.jpg"
               rounded
             />
           }
