@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 
 export default function Skripsi() {
+  const [tanggalLulus, setTanggalLulus] = useState("");
   const [nilaiSkripsi, setNilaiSkripsi] = useState("");
 
   const handleInputChange = (event) => {
     // Handle nilai skripsi sesuai dengan nilai dropdown yang dipilih
     const selectedValue = event.target.value;
     setNilaiSkripsi(selectedValue);
+    setTanggalLulus(event.target.value);
   };
   return (
     <BaseLayout>
@@ -65,27 +67,20 @@ export default function Skripsi() {
                   </div>
 
                   <div className="mb-4">
-                    <label className="label" htmlFor="nilaiskripsi">
+                    <label className="label" htmlFor="tanggalLulus">
                       <span className="label-text">Tanggal Lulus</span>
                     </label>
                     <div className="input-box">
-                      <select
-                        id="statusskripsi"
+                      <input
+                        type="date"
+                        id="tanggalLulus"
                         className="input input-bordered bg-white shadow-md w-full"
                         onChange={handleInputChange}
-                        value={nilaiSkripsi}
-                      >
-                        <option value="" disabled selected>
-                          Pilih Nilai Skripsi
-                        </option>
-                        <option value="4.00">A</option>
-                        <option value="3.00">B</option>
-                        <option value="2.00">C</option>
-                        <option value="1.00">D</option>
-                        <option value="0.00">E</option>
-                      </select>
+                        value={tanggalLulus}
+                      />
                     </div>
                   </div>
+
                   <div className="mb-4">
                     <label className="label" htmlFor="nilaiskripsi">
                       <span className="label-text">Nilai Skripsi</span>
