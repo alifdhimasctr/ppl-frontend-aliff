@@ -19,24 +19,17 @@ export default function Skripsi() {
       >
         <main>
           <div className="m-10 container mx-auto bg-gray">
-            <h1 className="text-4xl font-semibold   dark:text-black mt-5">
-              Entry Skripsi
+            <h1 className="text-4xl font-semibold text-[#183D3D] mt-5">
+              Entry
+              <span className="px-2 py-1 bg-[#183d3d] rounded text-[#f5f5f5] ml-2">
+                Skripsi
+              </span>
             </h1>
+            <p className="mt-2">
+              Masukan semester selesai Skripsi, Tanggal Selesai, dan nilai
+              Skripsi
+            </p>
             <div className="flex mt-10 gap-10   ">
-              <div className="item-center">
-                <div className="container mx-auto bg-white p-4 rounded-lg text-center">
-                  <img src="image/profil.jpg" alt="profil" width={200} />
-                  <p className="font-semibold text-lg text-black">
-                    Nama: John Doe
-                  </p>
-                  <p className="font-semibold text-lg text-black">
-                    NIM: 1234567890
-                  </p>
-                  <div className="bg-gray-300 text-white px-4 py-2 rounded-md mt-2">
-                    Status
-                  </div>
-                </div>
-              </div>
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
                   <div className="mb-4">
@@ -71,6 +64,28 @@ export default function Skripsi() {
                     </div>
                   </div>
 
+                  <div className="mb-4">
+                    <label className="label" htmlFor="nilaiskripsi">
+                      <span className="label-text">Tanggal Lulus</span>
+                    </label>
+                    <div className="input-box">
+                      <select
+                        id="statusskripsi"
+                        className="input input-bordered bg-white shadow-md w-full"
+                        onChange={handleInputChange}
+                        value={nilaiSkripsi}
+                      >
+                        <option value="" disabled selected>
+                          Pilih Nilai Skripsi
+                        </option>
+                        <option value="4.00">A</option>
+                        <option value="3.00">B</option>
+                        <option value="2.00">C</option>
+                        <option value="1.00">D</option>
+                        <option value="0.00">E</option>
+                      </select>
+                    </div>
+                  </div>
                   <div className="mb-4">
                     <label className="label" htmlFor="nilaiskripsi">
                       <span className="label-text">Nilai Skripsi</span>
