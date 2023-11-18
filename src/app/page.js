@@ -1,8 +1,9 @@
 import Link from "next/link";
+import React from "react";
 export default function Home() {
   return (
-    <div className="container flex w-full h-screen bg-[#183D3D]">
-      <div className="kata ml-16 mt-72 w-3/6 text-[#f5f5f5]">
+    <div className="bg-[#183D3D] w-full h-[100vh] flex align-middle" >
+      <div className="kata ml-16 w-3/6 self-center align-middle text-[#f5f5f5]">
         <h1 className="font-bold text-[36px]">
           Selamat Datang di, <br></br>
           <span className="text-[#183D3D] bg-[#f5f5f5] p-1">
