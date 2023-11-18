@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
+import Link from "next/link";
 
 export default function Skripsi() {
   const [tanggalLulus, setTanggalLulus] = useState("");
@@ -31,6 +32,13 @@ export default function Skripsi() {
               Masukan semester selesai Skripsi, Tanggal Selesai, dan nilai
               Skripsi
             </p>
+            <div className="hasil justify-end flex">
+              <Link href="/mhs/skripsi/hasilskripsi">
+                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                  Hasil Skripsi
+                </p>
+              </Link>
+            </div>
             <div className="flex mt-10 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">

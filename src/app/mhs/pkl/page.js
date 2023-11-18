@@ -2,6 +2,7 @@
 
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 import React, { useState } from "react";
+import Link from "next/link";
 // import Navbar from "../Component/navbar";
 
 const EntryPkl = () => {
@@ -27,6 +28,13 @@ const EntryPkl = () => {
               </span>
             </h1>
             <p className="mt-2">Masukan semester selesai PKL, dan nilai PKL</p>
+            <div className="hasil justify-end flex">
+              <Link href="/mhs/pkl/hasilpkl">
+                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                  Hasil PKL
+                </p>
+              </Link>
+            </div>
             <div className="flex mt-10 gap-10">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">

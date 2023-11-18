@@ -4,6 +4,7 @@ import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 import { TextInput } from "flowbite-react";
 import { Input } from "postcss";
 import React, { useState } from "react";
+import Link from "next/link";
 // import Navbar from "../Component/navbar";
 
 const Khs = () => {
@@ -22,6 +23,13 @@ const Khs = () => {
               </span>
             </h1>
             <p className="mt-2">Masukan jumlah SKS, dan semester</p>
+            <div className="hasil justify-end flex">
+              <Link href="/mhs/khs/hasilkhs">
+                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                  Hasil KHS
+                </p>
+              </Link>
+            </div>
             <div className="flex mt-10 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
