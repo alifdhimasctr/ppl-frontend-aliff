@@ -1,5 +1,6 @@
 import React from "react";
+import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 
 export default function HasilIrs() {
-  return <div>Ini Halaman Hasil IRS</div>;
+  return <BaseLayout>Ini Hasil IRS</BaseLayout>;
 }
