@@ -26,7 +26,7 @@ export default function Edit() {
           </div>
         </div>
         <div className="form mt-7 flex justify-center w-full">
-          <form className="flex w-full flex-col gap-4 w-3/4 pb-11">
+          <form className="flex flex-col gap-4 w-3/4 pb-11">
             <div>
               <div className="mb-2 block">
                 <Label htmlFor="nama" value="Nama" />
