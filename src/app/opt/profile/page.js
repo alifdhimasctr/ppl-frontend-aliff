@@ -6,12 +6,19 @@ import Link from "next/link";
 export default function Profile() {
   return (
     <BaseLayout_opt>
-      <h1 className="text-2xl font-bold text-gray-700 mb-3">PROFIL</h1>
+      <h1 className="text-2xl font-bold text-gray-700 mb-3">
+        PROFIL{" "}
+        <span className="ml-2 px-3 py-1 rounded font-bold text-gray-200 bg-gray-700">
+          OPERATOR
+        </span>
+      </h1>
       <div className="flex flex-col w-full h-max px-10 py-6 bg-white justify-start gap-6">
-        <p className="text-[#183D3D] text-end text-sm"><Link href={"/mhs/profile/edit"}>EDIT</Link></p>
+        <p className="text-[#183D3D] text-end text-sm">
+          <Link href={"/mhs/profile/edit"}>EDIT</Link>
+        </p>
         <div className="flex gap-10">
           <div className="w-[10rem] h-[10rem] bg-gray-200 rounded-full">
-              <Image
+            <Image
               src="/profil_photo.jpg"
               width={100}
               height={100}
@@ -44,7 +51,11 @@ export default function Profile() {
               <tr>
                 <td className="font-semibold w-40">Status</td>
                 <td className="ml-6 w-3">:</td>
-                <td><span className="bg-green-400 text-white p-1 text-xs">AKTIF</span></td>
+                <td>
+                  <span className="bg-green-400 text-white p-1 text-xs">
+                    AKTIF
+                  </span>
+                </td>
               </tr>
               <br />
               <tr>
@@ -57,7 +68,7 @@ export default function Profile() {
                 <td className="ml-6 w-3">:</td>
                 <td>21 Februari 2003</td>
               </tr>
-              <br/>
+              <br />
               <tr>
                 <td className="font-semibold w-40">Nomor HP</td>
                 <td className="ml-6 w-3">:</td>
