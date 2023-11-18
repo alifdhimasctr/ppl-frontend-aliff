@@ -8,8 +8,16 @@ import { FaArrowsLeftRight } from "react-icons/fa6";
 import { BsFileEarmarkBarGraphFill } from "react-icons/bs";
 import { MdAddHomeWork } from "react-icons/md";
 import { GiGraduateCap } from "react-icons/gi";
+import { RiAccountCircleFill } from "react-icons/ri";
 
 const sidebarItems = [
+
+  {
+    name: "Profile",
+    icon: RiAccountCircleFill,
+    link: "/mhs/profile",
+  },
+
   {
     name: "Dashboard",
     icon: MdDashboard,
