@@ -65,6 +65,18 @@ export default function Edit() {
 
             <div>
               <div className="mb-2 block">
+                <Label htmlFor="jalurmasuk" value="Jalur Masuk" />
+              </div>
+              <TextInput
+                id="jalurmasuk"
+                type="text"
+                placeholder="Orang Dalem"
+                disabled
+              />
+            </div>
+
+            <div>
+              <div className="mb-2 block">
                 <Label htmlFor="dosenwali" value="Dosen Wali" />
               </div>
               <TextInput
@@ -136,23 +148,48 @@ export default function Edit() {
 
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="alamatasal" value="Alamat Asal" />
+                <Label htmlFor="provinsi" value="Provinsi" />
               </div>
-              <textarea
-                id="alamatasal"
+              {/* Replace TextInput with a dropdown */}
+              <select
+                id="provinsi"
+                className="mt-1 p-2 border rounded-md w-full"
                 required
-                className="border rounded-md p-2 w-full"
-                rows="4"
-                placeholder="Masukkan alamat Anda"
-              ></textarea>
+              >
+                {/* Add your dropdown options here */}
+                <option value="">Pilih Provinsi</option>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+                <option value="city3">City 3</option>
+                {/* Add more options as needed */}
+              </select>
             </div>
 
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="alamatsekarang" value="Alamat Sekarang" />
+                <Label htmlFor="kota" value="Kota" />
+              </div>
+              {/* Replace TextInput with a dropdown */}
+              <select
+                id="kota"
+                className="mt-1 p-2 border rounded-md w-full"
+                required
+              >
+                {/* Add your dropdown options here */}
+                <option value="">Select a city</option>
+                <option value="city1">City 1</option>
+                <option value="city2">City 2</option>
+                <option value="city3">City 3</option>
+                {/* Add more options as needed */}
+              </select>
+            </div>
+
+            <div>
+              <div className="mb-2 block">
+                <Label htmlFor="alamatasal" value="Alamat" />
               </div>
               <textarea
-                id="alamatsekarang"
+                id="alamatasal"
                 required
                 className="border rounded-md p-2 w-full"
                 rows="4"

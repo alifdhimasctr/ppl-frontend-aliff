@@ -44,6 +44,11 @@ export default function Profile() {
                 <td>2021</td>
               </tr>
               <tr>
+                <td className="font-semibold w-40">Jalur Masuk</td>
+                <td className="ml-6 w-3">:</td>
+                <td>Orang Dalem</td>
+              </tr>
+              <tr>
                 <td className="font-semibold w-40">Dosen Wali</td>
                 <td className="ml-6 w-3">:</td>
                 <td>Dosen Wali 1</td>
@@ -80,14 +85,19 @@ export default function Profile() {
                 <td>example@flowbite.com</td>
               </tr>
               <tr>
-                <td className="font-semibold w-40">Alamat Asal</td>
+                <td className="font-semibold w-40">Provinsi</td>
                 <td className="ml-6 w-3">:</td>
-                <td>Jalan Raya No. 123</td>
+                <td>Jawa Tengah</td>
               </tr>
               <tr>
-                <td className="font-semibold w-40">Alamat Sekarang</td>
+                <td className="font-semibold w-40">Kota</td>
                 <td className="ml-6 w-3">:</td>
-                <td>Jalan Gondang Raya No. 342</td>
+                <td>Pekalongan</td>
+              </tr>
+              <tr>
+                <td className="font-semibold w-40">Alamat</td>
+                <td className="ml-6 w-3">:</td>
+                <td>Jalan Raya No. 123</td>
               </tr>
             </tbody>
           </table>
