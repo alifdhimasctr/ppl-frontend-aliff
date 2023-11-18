@@ -98,7 +98,7 @@ const Khs = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label className="label" htmlFor="jumlahsks">
+                    <label className="label" htmlFor="skskomulatif">
                       <span className="label-text text-black text">
                         SKS Komulatif
                       </span>
@@ -114,7 +114,7 @@ const Khs = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label className="label" htmlFor="jumlahsks">
+                    <label className="label" htmlFor="ipsemester">
                       <span className="label-text text-black text">
                         IP Semester
                       </span>

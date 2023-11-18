@@ -27,9 +27,6 @@ export default function Header() {
             </span>
           </Dropdown.Header>
           <Dropdown.Item>
-            <Link href="/mhs/profile">Profile</Link>
-          </Dropdown.Item>
-          <Dropdown.Item>
             <Link href="/login">Log Out</Link>
           </Dropdown.Item>
         </Dropdown>

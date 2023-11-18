@@ -34,28 +34,9 @@ export default function Profile() {
                 <td>Refiola Julieta</td>
               </tr>
               <tr>
-                <td className="font-semibold w-40">NIM</td>
+                <td className="font-semibold w-40">NIP</td>
                 <td className="ml-6 w-3">:</td>
                 <td>24060121120037</td>
-              </tr>
-              <tr>
-                <td className="font-semibold w-40">Angkatan</td>
-                <td className="ml-6 w-3">:</td>
-                <td>2021</td>
-              </tr>
-              <tr>
-                <td className="font-semibold w-40">Dosen Wali</td>
-                <td className="ml-6 w-3">:</td>
-                <td>Dosen Wali 1</td>
-              </tr>
-              <tr>
-                <td className="font-semibold w-40">Status</td>
-                <td className="ml-6 w-3">:</td>
-                <td>
-                  <span className="bg-green-400 text-white p-1 text-xs">
-                    AKTIF
-                  </span>
-                </td>
               </tr>
               <br />
               <tr>
