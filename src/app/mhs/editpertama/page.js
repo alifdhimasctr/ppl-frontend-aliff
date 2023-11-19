@@ -141,6 +141,19 @@ export default function EditPertama() {
 
           <div>
             <div className="mb-2 block">
+              <Label htmlFor="password" value="Passsword Baru" />
+            </div>
+            <TextInput
+              number
+              id="password"
+              type="password"
+              placeholder="Masukan Password Baru"
+              required
+            />
+          </div>
+
+          <div>
+            <div className="mb-2 block">
               <Label htmlFor="provinsi" value="Provinsi" />
             </div>
             {/* Replace TextInput with a dropdown */}

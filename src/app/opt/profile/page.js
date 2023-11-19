@@ -14,7 +14,7 @@ export default function Profile() {
       </h1>
       <div className="flex flex-col w-full h-max px-10 py-6 bg-white justify-start gap-6">
         <p className="text-[#183D3D] text-end text-sm">
-          <Link href={"/mhs/profile/edit"}>EDIT</Link>
+          <Link href={"/opt/profile/edit"}>EDIT</Link>
         </p>
         <div className="flex gap-10">
           <div className="w-[10rem] h-[10rem] bg-gray-200 rounded-full">
