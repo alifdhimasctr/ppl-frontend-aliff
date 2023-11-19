@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 // import Navbar from "../Component/navbar";
 
-const EntryPkl = () => {
+const Pkl = () => {
   const [nilaiPKL, setNilaiPKL] = useState("");
 
   const handleInputChange = (event) => {
@@ -144,4 +144,4 @@ const EntryPkl = () => {
   );
 };
 
-export default EntryPkl;
+export default Pkl;

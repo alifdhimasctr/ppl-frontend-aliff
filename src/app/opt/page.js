@@ -7,7 +7,7 @@ import { PiChalkboardTeacherFill } from "react-icons/pi";
 import { FaSchool } from "react-icons/fa";
 import CountUp, { Number } from "@/components/Number";
 
-export default function page() {
+export default function DashboardOperator() {
   return (
     <BaseLayout_dpt>
       <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-7">

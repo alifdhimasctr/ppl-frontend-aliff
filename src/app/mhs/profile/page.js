@@ -3,7 +3,7 @@ import BaseLayout_opt from "@/components/BaseLayout/BaseLayout_mhs";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Profile() {
+export default function ProfileMahasiswa() {
   return (
     <BaseLayout_opt>
       <h1 className="text-2xl font-bold text-gray-700 mb-3">

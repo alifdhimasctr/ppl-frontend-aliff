@@ -4,7 +4,7 @@ import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import Image from "next/image";
 import React from "react";
 
-export default function Edit() {
+export default function EditProfileMahasiswa() {
   return (
     <BaseLayout>
       <h1 className="text-2xl font-bold text-gray-700 mb-3">
