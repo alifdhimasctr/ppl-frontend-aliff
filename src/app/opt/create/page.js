@@ -1,8 +1,6 @@
 "use client";
-import BaseLayout_opt from '@/components/BaseLayout/BaseLayout_opt';
+import BaseLayout_opt from "@/components/BaseLayout/BaseLayout_opt";
 import React, { useState } from "react";
-
-
 
 const create = () => {
   const [nim, setNim] = useState("");
@@ -15,6 +13,17 @@ const create = () => {
     // TODO: handle form submission
   };
 
+  const generateYearOptions = () => {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = 0; i <= 5; i++) {
+      years.push(currentYear + i);
+    }
+    return years;
+  };
+
+  const years = generateYearOptions();
+
   return (
     <BaseLayout_opt>
       <h1 className="text-2xl font-bold text-gray-700 mb-3">CREATE ACCOUNT</h1>
@@ -22,10 +31,12 @@ const create = () => {
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <label htmlFor="nim" className="text-black">NIM</label>
+              <label htmlFor="nim" className="text-black">
+                NIM
+              </label>
               <input
                 className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
-                placeholder='Masukkan NIM'
+                placeholder="Masukkan NIM"
                 type="text"
                 id="nim"
                 value={nim}
@@ -33,10 +44,12 @@ const create = () => {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="nama" className="text-black">Nama</label>
+              <label htmlFor="nama" className="text-black">
+                Nama
+              </label>
               <input
                 className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
-                placeholder='Masukkan Nama'
+                placeholder="Masukkan Nama"
                 type="text"
                 id="nama"
                 value={nama}
@@ -44,29 +57,43 @@ const create = () => {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="angkatan" className="text-black">Angkatan</label>
-              <input
+              <label htmlFor="angkatan" className="text-black">
+                Angkatan
+              </label>
+              <select
                 className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
-                placeholder='Masukkan Angkatan'
-                type="text"
                 id="angkatan"
                 value={angkatan}
                 onChange={(event) => setAngkatan(event.target.value)}
-              />
+              >
+                <option value="">Pilih Angkatan</option>
+                {years.map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="dosenWali" className="text-black">Dosen Wali</label>
+              <label htmlFor="dosenWali" className="text-black">
+                Dosen Wali
+              </label>
               <select className="rounded-md drop-shadow-md text-black border-1 border-gray-300">
                 <option value="">Pilih Dosen Wali</option>
                 <option value="dosenWali">Dosen Wali1</option>
                 <option value="dosenWali">Dosen Wali2</option>
               </select>
             </div>
-            <button type="submit" className="bg-[#183D3D] text-white w-20 h-8 text-sm rounded-md">Submit</button>
+            <button
+              type="submit"
+              className="bg-[#183D3D] text-white w-20 h-8 text-sm rounded-md"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
     </BaseLayout_opt>
   );
-}
+};
 export default create;
