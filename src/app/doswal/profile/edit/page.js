@@ -1,12 +1,12 @@
 "use client";
-import BaseLayout from "@/components/BaseLayout/BaseLayout_opt";
+import BaseLayout_doswal from "@/components/BaseLayout/BaseLayout_doswal";
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import Image from "next/image";
 import React from "react";
 
 export default function EditOperator() {
   return (
-    <BaseLayout>
+    <BaseLayout_doswal>
       <h1 className="text-2xl font-bold text-gray-700 mb-3">
         Edit{" "}
         <span className="ml-2 px-3 py-1 rounded font-bold text-gray-200 bg-gray-700">
@@ -121,6 +121,6 @@ export default function EditOperator() {
           </form>
         </div>
       </div>
-    </BaseLayout>
+    </BaseLayout_doswal>
   );
 }
