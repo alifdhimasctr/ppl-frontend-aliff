@@ -7,9 +7,9 @@ export default function Profile() {
   return (
     <BaseLayout_opt>
       <h1 className="text-2xl font-bold text-gray-700 mb-3">
-        PROFIL{" "}
+        Profile{" "}
         <span className="ml-2 px-3 py-1 rounded font-bold text-gray-200 bg-gray-700">
-          OPERATOR
+          Operator
         </span>
       </h1>
       <div className="flex flex-col w-full h-max px-10 py-6 bg-white justify-start gap-6">
@@ -19,7 +19,7 @@ export default function Profile() {
         <div className="flex gap-10">
           <div className="w-[10rem] h-[10rem] bg-gray-200 rounded-full">
             <Image
-              src="/profil_photo.jpg"
+              src="/pp-kosong.jpeg"
               width={100}
               height={100}
               className="w-[10rem] h-[10rem] rounded-full"
@@ -61,12 +61,7 @@ export default function Profile() {
                 <td>example@flowbite.com</td>
               </tr>
               <tr>
-                <td className="font-semibold w-40">Alamat Asal</td>
-                <td className="ml-6 w-3">:</td>
-                <td>Jalan Raya No. 123</td>
-              </tr>
-              <tr>
-                <td className="font-semibold w-40">Alamat Sekarang</td>
+                <td className="font-semibold w-40">Alamat</td>
                 <td className="ml-6 w-3">:</td>
                 <td>Jalan Gondang Raya No. 342</td>
               </tr>

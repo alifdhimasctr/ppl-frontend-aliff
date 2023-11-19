@@ -32,6 +32,7 @@ const create = () => {
           Akun
         </span>
       </h1>
+      <p className="mt-3">Membuat akun mahasiswa baru</p>
       <div className="flex mt-7 flex-col w-100% h-max px-10 py-6 bg-white justify-start gap-6">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4">

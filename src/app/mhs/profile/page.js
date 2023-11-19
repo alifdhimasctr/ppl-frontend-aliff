@@ -19,7 +19,7 @@ export default function ProfileMahasiswa() {
         <div className="flex gap-10">
           <div className="w-[10rem] h-[10rem] bg-gray-200 rounded-full">
             <Image
-              src="/profil_photo.jpg"
+              src="/pp-kosong.jpeg"
               width={100}
               height={100}
               className="w-[10rem] h-[10rem] rounded-full"

@@ -7,12 +7,17 @@ import React from "react";
 export default function Edit() {
   return (
     <BaseLayout>
-      <h1 className="text-2xl font-bold text-gray-700 mb-3">EDIT PROFIL</h1>
+      <h1 className="text-2xl font-bold text-gray-700 mb-3">
+        Edit{" "}
+        <span className="ml-2 px-3 py-1 rounded font-bold text-gray-200 bg-gray-700">
+          Profile
+        </span>
+      </h1>
       <div className="flex gap-10 bg-white w-full h-max p-4 px-12 rounded-sm">
         <div className="flex flex-col w-[15rem] pt-10">
           <div className="w-[10rem] h-[10rem] bg-gray-200 rounded-full">
             <Image
-              src="/profil_photo.jpg"
+              src="/pp-kosong.jpeg"
               width={100}
               height={100}
               className="w-[10rem] h-[10rem] rounded-full"

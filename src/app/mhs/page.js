@@ -13,7 +13,7 @@ export default function DashboardMahasiswa() {
       </h1>
       <div className="profil_dashboard-container1">
         <Image
-          src="/profil_photo.jpg"
+          src="/pp-kosong.jpeg"
           width={80}
           height={80}
           className="dashboard_profil-img"

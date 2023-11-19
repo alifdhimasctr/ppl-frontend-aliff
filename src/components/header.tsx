@@ -15,7 +15,7 @@ export default function Header() {
             <Avatar
               className="mr-11"
               alt="User settings"
-              img="/profil_photo.jpg"
+              img="/pp-kosong.jpeg"
               rounded
             />
           }
