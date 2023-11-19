@@ -26,8 +26,13 @@ const create = () => {
 
   return (
     <BaseLayout_opt>
-      <h1 className="text-2xl font-bold text-gray-700 mb-3">CREATE ACCOUNT</h1>
-      <div className="flex flex-col w-100% h-max px-10 py-6 bg-white justify-start gap-6">
+      <h1 className="text-4xl font-semibold text-[#183D3D] mt-5">
+        Buat
+        <span className="px-2 py-1 bg-[#183d3d] rounded text-[#f5f5f5] ml-2">
+          Akun
+        </span>
+      </h1>
+      <div className="flex mt-7 flex-col w-100% h-max px-10 py-6 bg-white justify-start gap-6">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
@@ -88,7 +93,7 @@ const create = () => {
               type="submit"
               className="bg-[#183D3D] text-white w-20 h-8 text-sm rounded-md"
             >
-              Submit
+              Buat Akun
             </button>
           </div>
         </form>

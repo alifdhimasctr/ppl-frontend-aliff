@@ -10,11 +10,18 @@ import CountUp, { Number } from "@/components/Number";
 export default function page() {
   return (
     <BaseLayout_dpt>
-      <h1 className="text-2xl font-bold text-gray-700 mb-3">DASHBOARD</h1>
+      <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-7">
+        Dashboard
+        <span className="px-2 py-1 bg-[#183d3d] rounded text-[#f5f5f5] ml-2">
+          Operator
+        </span>
+      </h1>
       <div className="profil_dashboard-container1">
-        <Image   
-          src="/profil_photo.jpg" 
-          width={80} height={80} className="dashboard_profil-img"
+        <Image
+          src="/profil_photo.jpg"
+          width={80}
+          height={80}
+          className="dashboard_profil-img"
           alt="profil"
         />
         <h1 className="text-2xl font-semibold text-white">REFIOLA JULIETA</h1>
