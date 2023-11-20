@@ -5,6 +5,36 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function DetailPencarianDoswal() {
+  const [selectedSemester, setSelectedSemester] = React.useState(null);
+  const sksInIRS = {
+    1: 18,
+    2: 21,
+  };
+
+  const khsData = {
+    1: { sks: 18, ip: 3.5 }, // Example for Semester 1
+    2: { sks: 21, ip: 3.7 }, // Example for Semester 2
+    // Add more entries for other semesters
+  };
+
+  // Calculate cumulative SKS and IP
+  const calculateCumulative = (semester) => {
+    let cumulativeSks = 0;
+    let cumulativeIp = 0;
+
+    for (let i = 1; i <= semester; i++) {
+      if (khsData[i]) {
+        cumulativeSks += khsData[i].sks;
+        cumulativeIp += khsData[i].sks * khsData[i].ip;
+      }
+    }
+
+    const ipKumulatif = cumulativeSks === 0 ? 0 : cumulativeIp / cumulativeSks;
+
+    return { cumulativeSks, ipKumulatif };
+  };
+
+  const { cumulativeSks, ipKumulatif } = calculateCumulative(selectedSemester);
   return (
     <BaseLayout_doswal>
       <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-5">
@@ -74,7 +104,8 @@ export default function DetailPencarianDoswal() {
               key={index + 1}
               className={`w-12 h-12 flex items-center justify-center text-white relative bg-red-500 ${
                 index < 4 ? "text-xs" : "text-sm"
-              }`}
+              } ${selectedSemester === index + 1 ? "bg-gray-500" : ""}`}
+              onClick={() => setSelectedSemester(index + 1)}
             >
               {index + 1}
               {index === 0 && (
@@ -93,6 +124,42 @@ export default function DetailPencarianDoswal() {
           ))}
         </div>
       </div>
+
+      {/* KHS and IRS Boxes */}
+      {selectedSemester && (
+        <div className="mt-8 p-4 border rounded-md bg-gray-100 flex justify-between gap-4">
+          {/* KHS Box */}
+          <div className="flex flex-col items-center p-4 bg-blue-500 text-white rounded-md w-1/2">
+            <h3 className="text-lg font-semibold mb-2">KHS</h3>
+            <div className="text-lg font-semibold mb-2">
+              SKS: {khsData[selectedSemester]?.sks || 0}
+            </div>
+            <div className="text-lg font-semibold mb-2">
+              IP: {khsData[selectedSemester]?.ip || 0}
+            </div>
+            <div className="text-lg font-semibold mb-2">
+              Kumulatif SKS: {cumulativeSks}
+            </div>
+            <div className="text-lg font-semibold mb-2">
+              Kumulatif IP: {ipKumulatif.toFixed(2)}
+            </div>
+            <div className="underline cursor-pointer text-sm">
+              <Link href="/doswal/pencarian/detail/khs">View Detail</Link>
+            </div>
+          </div>
+
+          {/* IRS Box */}
+          <div className="flex flex-col items-center p-4 bg-green-500 text-white rounded-md w-1/2">
+            <h3 className="text-lg font-semibold mb-2">IRS</h3>
+            <div className="text-lg font-semibold mb-2">
+              Jumlah SKS: {sksInIRS[selectedSemester]}
+            </div>
+            <div className="underline cursor-pointer text-sm">
+              <Link href="/doswal/pencarian/detail/irs">View Detail</Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Legend */}
       <div className="mt-5">
