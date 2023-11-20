@@ -14,7 +14,7 @@ export default function VerifikasiDosenwali() {
           Mahasiswa
         </span>
       </h1>
-      <Button.Group>
+      <Button.Group className="mt-11">
         <Link href="/doswal/verifikasi/irs">
           <Button color="gray">IRS</Button>
         </Link>
