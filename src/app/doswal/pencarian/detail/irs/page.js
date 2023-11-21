@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export default function DetailIrsPencarian() {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function ViewDetailIrs() {
+  return <div>Halaman view detail irs</div>;
 }

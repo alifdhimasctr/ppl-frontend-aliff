@@ -18,9 +18,15 @@ export default function VerifikasiDosenwali() {
         <Link href="/doswal/verifikasi/irs">
           <Button color="gray">IRS</Button>
         </Link>
-        <Button color="gray">KHS</Button>
-        <Button color="gray">PKL</Button>
-        <Button color="gray">Skripsi</Button>
+        <Link href="/doswal/verifikasi/khs">
+          <Button color="gray">KHS</Button>
+        </Link>
+        <Link href="/doswal/verifikasi/pkl">
+          <Button color="gray">PKL</Button>
+        </Link>
+        <Link href="/doswal/verifikasi/skripsi">
+          <Button color="gray">Skripsi</Button>
+        </Link>
       </Button.Group>
     </BaseLayout_doswal>
   );
