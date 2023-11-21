@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function DetailKhsPencarian() {
-  return <div></div>;
+export default function ViewDetailKhs() {
+  return <div>Ini adalah halaman view detail khs</div>;
 }

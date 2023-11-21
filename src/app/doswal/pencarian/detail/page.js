@@ -163,7 +163,9 @@ export default function DetailPencarianDoswal() {
 
       {/* Legend */}
       <div className="mt-5">
-        <h2 className="text-2xl font-semibold text-[#183D3D] mb-3">Legend</h2>
+        <h2 className="text-2xl font-semibold text-[#183D3D] mb-3">
+          Keterangan
+        </h2>
         <div className="flex gap-4">
           <div className="legend-item">
             <div className="w-6 h-6 bg-red-500 rounded-md"></div>
