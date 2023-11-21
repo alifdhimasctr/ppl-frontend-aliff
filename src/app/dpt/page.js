@@ -1,10 +1,10 @@
 import React from "react";
-import BaseLayout from "@/components/BaseLayout/BaseLayout";
+import BaseLayout_departemen from "@/components/BaseLayout/BaseLayout_departemen";
 
 export default function DashboardDepartemen() {
   return (
-    <BaseLayout>
+    <BaseLayout_departemen>
       <div className="container">Ini Adalah Halaman Departemen</div>
-    </BaseLayout>
+    </BaseLayout_departemen>
   );
 }
