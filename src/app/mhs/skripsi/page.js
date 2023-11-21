@@ -29,17 +29,17 @@ export default function Skripsi() {
               </span>
             </h1>
             <p className="mt-2">
-              Masukan semester selesai Skripsi, Tanggal Selesai, dan nilai
+              Masukkan semester selesai Skripsi, Tanggal Selesai, dan nilai
               Skripsi
             </p>
             <div className="hasil justify-end flex">
               <Link href="/mhs/skripsi/hasilskripsi">
-                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                <p className="mt-5 mr-2 text-[#183d3d] font-semibold items-end">
                   Hasil Skripsi
                 </p>
               </Link>
             </div>
-            <div className="flex mt-10 gap-10   ">
+            <div className="flex mt-2 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
                   <div className="mb-4">
@@ -147,14 +147,11 @@ export default function Skripsi() {
                       ></input>
                     </label>
                   </div>
-                  <div className="mb-4">
-                    <button
-                      type="submit"
-                      className="btn btn-primary hover:bg-gray-300 text-white w-32 h-10 "
-                    >
+                  <div className="mb-1">
+                    <button className="m-1 ml-0 bg-[#183d3d] rounded-md text-white w-20 h-10 ">
                       Simpan
                     </button>
-                    <button className="btn ml-3 w-32 h-8">Batal</button>
+                    <button className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
                   </div>
                 </div>
               </div>
