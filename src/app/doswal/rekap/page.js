@@ -14,12 +14,16 @@ export default function RekapDosenWali() {
         </span>
       </h1>
 
-      <Button.Group className="mt-11">
+      <Button.Group className="mt-5 gap-2">
         <Link href="/doswal/rekap/pkl">
-          <Button color="gray">PKL</Button>
+          <Button color="gray">
+            PKL
+          </Button>
         </Link>
         <Link href="/doswal/rekap/skripsi">
-          <Button color="gray">Skripsi</Button>
+          <Button color="gray">
+            Skripsi
+            </Button>
         </Link>
       </Button.Group>
     </BaseLayout_doswal>
