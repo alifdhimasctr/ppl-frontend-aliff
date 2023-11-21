@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 export default function PencarianDoswal() {
   return (
     <BaseLayout_doswal>
-      <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-5">
+      <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-2">
         Pencarian
         <span className="px-2 py-1 bg-[#183d3d] rounded text-[#f5f5f5] ml-2">
           Mahasiswa
@@ -14,7 +14,7 @@ export default function PencarianDoswal() {
       </h1>
 
       {/* Search Bar */}
-      <div className="flex items-center mb-11 mt-6">
+      <div className="flex items-center mb-4 mt-4">
         <input
           type="text"
           placeholder="Cari Mahasiswa..."
@@ -26,18 +26,18 @@ export default function PencarianDoswal() {
             // Handle search logic here
           }}
         >
-          <FaSearch className="mr-2" style={{ height: "20px" }} />
+          <FaSearch className="self-center" style={{ height: "20px" }} />
         </button>
       </div>
 
-      <h1 className="text-2xl font-bold text-gray-700 mb-3 mt-11">
-        Hasil{" "}
+      <h1 className="text-2xl font-bold text-gray-700 mb-3 mt-4">
+        Hasil
         <span className="ml-2 px-3 py-1 rounded font-bold text-gray-200 bg-[#183d3d]">
           Pencarian
         </span>
       </h1>
       {/* Table */}
-      <table className="mt-11 w-full">
+      <table className="mt-4 w-full">
         <thead>
           <tr>
             <th>No</th>

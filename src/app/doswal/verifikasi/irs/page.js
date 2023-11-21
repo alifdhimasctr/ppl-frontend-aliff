@@ -14,7 +14,7 @@ export default function VerifikasiIrsDoswal() {
         </span>
       </h1>
 
-      <Button.Group className="mt-5">
+      <Button.Group className="mt-5 gap-2">
         <Link href="/doswal/verifikasi/irs">
           <Button className="font-bold text-white bg-[#183d3d]" color="gray">
             IRS
