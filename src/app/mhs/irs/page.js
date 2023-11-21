@@ -20,15 +20,15 @@ const Irs = () => {
                 IRS
               </span>
             </h1>
-            <p className="mt-2">Masukan jumlah SKS, dan semester</p>
+            <p className="mt-2">Masukkan semester dan jumlah SKS yang diambil</p>
             <div className="hasil justify-end flex">
               <Link href="/mhs/irs/hasilirs">
-                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                <p className="mt-5 mr-2 text-[#183d3d] font-semibold items-end">
                   Hasil IRS
                 </p>
               </Link>
             </div>
-            <div className="flex mt-10 gap-10   ">
+            <div className="flex mt-2 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
                   <div className="mb-4">
@@ -40,10 +40,10 @@ const Irs = () => {
                     <div className="input-box">
                       <select
                         id="semester"
-                        className="input input-bordered bg-white shadow-md w-full"
+                        className="input input-bordered text-gray-700 bg-white shadow-md w-full"
                       >
                         <option value="" disabled selected>
-                          Masukn Semester Anda
+                          Masukkan Semester Anda
                         </option>
                         <option value="1">Semester 1</option>
                         <option value="2">Semester 2</option>
@@ -70,10 +70,10 @@ const Irs = () => {
                     <div className="input-box">
                       <select
                         id="jumlahsks"
-                        className="input input-bordered bg-white shadow-md w-full"
+                        className="input  text-gray-700 before:input-bordered bg-white shadow-md w-full"
                       >
                         <option value="" disabled selected>
-                          Masukn Jumlah SKS yang di ambil
+                          Masukkan Jumlah SKS yang diambil
                         </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -139,11 +139,11 @@ const Irs = () => {
                       ></input>
                     </label>
                   </div>
-                  <div className="mb-4">
-                    <button className="btn btn-primary hover:bg-gray-300 text-white w-32 h-10 ">
+                  <div className="mb-1">
+                    <button className="m-1 ml-0 bg-[#183d3d] rounded-md text-white w-20 h-10 ">
                       Simpan
                     </button>
-                    <button className="btn ml-3 w-32 h-8">Batal</button>
+                    <button className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
                   </div>
                 </div>
               </div>

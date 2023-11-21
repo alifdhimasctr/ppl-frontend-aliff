@@ -27,15 +27,15 @@ const Pkl = () => {
                 PKL
               </span>
             </h1>
-            <p className="mt-2">Masukan semester selesai PKL, dan nilai PKL</p>
+            <p className="mt-2">Masukkan semester selesai PKL, dan nilai PKL</p>
             <div className="hasil justify-end flex">
               <Link href="/mhs/pkl/hasilpkl">
-                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                <p className="mt-5 mr-2 text-[#183d3d] font-semibold items-end">
                   Hasil PKL
                 </p>
               </Link>
             </div>
-            <div className="flex mt-10 gap-10">
+            <div className="flex mt-2 gap-10">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
                   <div className="mb-4">
@@ -128,11 +128,11 @@ const Pkl = () => {
                       ></input>
                     </label>
                   </div>
-                  <div className="mb-4">
-                    <button className="btn btn-primary hover:bg-gray-300 text-white w-32 h-10 ">
+                  <div className="mb-1">
+                    <button className="m-1 ml-0 bg-[#183d3d] rounded-md text-white w-20 h-10 ">
                       Simpan
                     </button>
-                    <button className="btn ml-3 w-32 h-8">Batal</button>
+                    <button className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
                   </div>
                 </div>
               </div>

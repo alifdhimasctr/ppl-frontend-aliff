@@ -22,15 +22,15 @@ const Khs = () => {
                 KHS
               </span>
             </h1>
-            <p className="mt-2">Masukan jumlah SKS, dan semester</p>
+            <p className="mt-2">Masukkan jumlah SKS, dan semester</p>
             <div className="hasil justify-end flex">
               <Link href="/mhs/khs/hasilkhs">
-                <p className="mt-5 text-[#183d3d] font-semibold items-end">
+                <p className="mt-5 mr-2 text-[#183d3d] font-semibold items-end">
                   Hasil KHS
                 </p>
               </Link>
             </div>
-            <div className="flex mt-10 gap-10   ">
+            <div className="flex mt-2 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
                   <div className="mb-4">
@@ -45,7 +45,7 @@ const Khs = () => {
                         className="input input-bordered bg-white shadow-md w-full"
                       >
                         <option value="" disabled selected>
-                          Masukn Semester Anda
+                          Masukkan Semester Anda
                         </option>
                         <option value="1">Semester 1</option>
                         <option value="2">Semester 2</option>
@@ -75,7 +75,7 @@ const Khs = () => {
                         className="input input-bordered bg-white shadow-md w-full"
                       >
                         <option value="" disabled selected>
-                          Masukan Jumlah SKS yang di ambil
+                          Masukkan Jumlah SKS yang di ambil
                         </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -108,7 +108,7 @@ const Khs = () => {
                   <div className="mb-4">
                     <label className="label" htmlFor="skskomulatif">
                       <span className="label-text text-black text">
-                        SKS Komulatif
+                        SKS Kumulatif
                       </span>
                     </label>
                     <div className="input-box">
@@ -116,7 +116,7 @@ const Khs = () => {
                         type="number"
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
-                        placeholder="Masukan Jumlah SKS yang di ambil"
+                        placeholder="Masukkan Jumlah SKS yang di ambil"
                       />
                     </div>
                   </div>
@@ -132,7 +132,7 @@ const Khs = () => {
                         type="number"
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
-                        placeholder="Masukan Jumlah SKS yang di ambil"
+                        placeholder="Masukkan Jumlah SKS yang di ambil"
                       />
                     </div>
                   </div>
@@ -140,7 +140,7 @@ const Khs = () => {
                   <div className="mb-4">
                     <label className="label" htmlFor="jumlahsks">
                       <span className="label-text text-black text">
-                        IP Komulatif
+                        IP Kumulatif
                       </span>
                     </label>
                     <div className="input-box">
@@ -148,7 +148,7 @@ const Khs = () => {
                         type="number"
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
-                        placeholder="Masukan Jumlah SKS yang di ambil"
+                        placeholder="Masukkan Jumlah SKS yang di ambil"
                       />
                     </div>
                   </div>
@@ -189,11 +189,11 @@ const Khs = () => {
                       ></input>
                     </label>
                   </div>
-                  <div className="mb-4">
-                    <button className="btn btn-primary hover:bg-gray-300 text-white w-32 h-10 ">
+                  <div className="mb-1">
+                    <button className="m-1 ml-0 bg-[#183d3d] rounded-md text-white w-20 h-10 ">
                       Simpan
                     </button>
-                    <button className="btn ml-3 w-32 h-8">Batal</button>
+                    <button className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
                   </div>
                 </div>
               </div>
