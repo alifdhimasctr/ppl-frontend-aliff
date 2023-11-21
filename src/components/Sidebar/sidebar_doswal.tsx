@@ -7,10 +7,12 @@ import { BiSolidBookAdd } from "react-icons/bi";
 import { FaArrowsLeftRight } from "react-icons/fa6";
 import { BsFileEarmarkBarGraphFill } from "react-icons/bs";
 import { MdAddHomeWork } from "react-icons/md";
-import { GiGraduateCap } from "react-icons/gi";
+
 import { RiAccountCircleFill } from "react-icons/ri";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiCheckCircle } from "react-icons/fi";
+import { FaList } from "react-icons/fa";
+
 
 const sidebarItems = [
   {
@@ -37,6 +39,12 @@ const sidebarItems = [
     name: "Rekap",
     icon: MdAddHomeWork,
     link: "/doswal/rekap",
+  },
+
+  {
+    name: "List",
+    icon: FaList,
+    link: "/doswal/list",
   },
 ];
 

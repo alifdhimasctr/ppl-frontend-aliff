@@ -38,21 +38,32 @@ export default function RekapSkripsi() {
         </Link>
       </Button.Group>
       
-      <div className="flex flex-col gap-2 h-max w-full mb-2 mt-4">
-        <div className="flex justify-between w-full text-white bg-[#183D3D] items-center drop-shadow-md rounded-md px-8 py-2">
-          <span>Angkatan</span>
-          <span>Belum Lulus</span>
-          <span>Sudah Lulus</span>
-          <span>Action</span>
-        </div>
-        {data.map((item) => (
-          <div key={item.angkatan} className="flex justify-between w-full text-black bg-white items-center drop-shadow-md rounded-md px-4 py-2">
-            <span>{item.angkatan}</span>
-            <span>{item.belumLulus}</span>
-            <span>{item.sudahLulus}</span>
-            <span><Button className="bg-blue-700 m-1 h-8">Detail</Button></span>
+      <Button className="w-max h-8 p-1 self-end">Cetak</Button>
+      <div className="flex flex-col gap-2 h-max w-full mb-2 mt-2">
+        <div className="grid grid-cols-2 gap-2">
+          <div className="flex w-full text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+            <span className="w-1/3">Angkatan</span>
+            <span className="w-1/3">Belum Lulus</span>
+            <span className="w-1/3">Sudah Lulus</span>
           </div>
-        ))}
+          <div className="flex w-full text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+            <span className="w-1/3">Angkatan</span>
+            <span className="w-1/3">Belum Lulus</span>
+            <span className="w-1/3">Sudah Lulus</span>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {data.map((item) => (
+            <div
+              key={item.angkatan}
+              className="flex w-full text-black text-center bg-white drop-shadow-md rounded-md px-4 py-2"
+            >
+              <span className="w-1/3">{item.angkatan}</span>
+              <span className="w-1/3">{item.belumLulus}</span>
+              <span className="w-1/3">{item.sudahLulus}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </BaseLayout_doswal>
   );
