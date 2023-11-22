@@ -1,6 +1,30 @@
+// Import necessary modules and components
+"use client";
+import { Button } from "flowbite-react";
+import Link from "next/link";
 import React from "react";
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 
+// Sample data (replace this with your actual data)
+const data = [
+  {
+    semester: 1,
+    nilai: 85,
+    tanggalLulus: "2023-05-15",
+    file: "File 1",
+    action: "View",
+  },
+  {
+    semester: 2,
+    nilai: 92,
+    tanggalLulus: "2023-12-20",
+    file: "File 2",
+    action: "Download",
+  },
+  // Add more data as needed
+];
+
+// React component for displaying Skripsi results
 export default function HasilSkripsi() {
   return (
     <BaseLayout>
@@ -11,82 +35,40 @@ export default function HasilSkripsi() {
         </span>
       </h1>
 
-      <div className="mt-5">
-        <table className="table-auto mx-auto border-collapse">
-          <thead className="text-left">
-            <tr>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Semester
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Nilai
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Tanggal Lulus
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                File Berita Acara
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="px-4 border border-[#183D3D]">
-                Your Semester Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Nilai Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Tanggal Lulus Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your File Berita Acara Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Action Content
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 border border-[#183D3D]">
-                Your Semester Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Nilai Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Tanggal Lulus Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your File Berita Acara Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Action Content
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 border border-[#183D3D]">
-                Your Semester Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Nilai Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Tanggal Lulus Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your File Berita Acara Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Action Content
-              </td>
-            </tr>
-            {/* Add more rows if needed */}
-          </tbody>
-        </table>
+      <Button className="w-max h-8 p-1 self-end">Cetak</Button>
+      <div className="flex flex-col gap-2 h-max w-full mb-2 mt-2">
+        <div className="grid grid-cols-2 gap-2">
+          {/* Header row */}
+          <div className="flex w-full text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+            <span className="w-1/6">Semester</span>
+            <span className="w-1/6">Nilai</span>
+            <span className="w-1/6">Tanggal Lulus</span>
+            <span className="w-1/6">File</span>
+            <span className="w-1/6">Action</span>
+          </div>
+          <div className="flex w-full text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+            <span className="w-1/6">Semester</span>
+            <span className="w-1/6">Nilai</span>
+            <span className="w-1/6">Tanggal Lulus</span>
+            <span className="w-1/6">File</span>
+            <span className="w-1/6">Action</span>
+          </div>
+        </div>
+        {/* Data rows */}
+        <div className="grid grid-cols-2 gap-2">
+          {data.map((item) => (
+            <div
+              key={item.semester}
+              className="flex w-full text-black text-center bg-white drop-shadow-md rounded-md px-4 py-2"
+            >
+              <span className="w-1/6">{item.semester}</span>
+              <span className="w-1/6">{item.nilai}</span>
+              <span className="w-1/6">{item.tanggalLulus}</span>
+              <span className="w-1/6">{item.file}</span>
+              <span className="w-1/6">{item.action}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </BaseLayout>
   );

@@ -1,5 +1,27 @@
+"use client";
+import { Button } from "flowbite-react";
+import Link from "next/link";
 import React from "react";
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
+
+// Sample data (replace this with your actual data)
+const data = [
+  {
+    semester: 1,
+    angkatan: "2022",
+    jumlahSKs: 24,
+    file: "File 1",
+    action: "Download",
+  },
+  {
+    semester: 2,
+    angkatan: "2021",
+    jumlahSKs: 30,
+    file: "File 2",
+    action: "Download",
+  },
+  // Add more data as needed
+];
 
 export default function HasilIrs() {
   return (
@@ -11,70 +33,35 @@ export default function HasilIrs() {
         </span>
       </h1>
 
-      <div className="mt-5">
-        <table className="table-auto mx-auto border-collapse">
-          <thead className="text-left">
-            <tr>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Semester
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Jumlah SKS
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                File IRS
-              </th>
-              <th className="text-xl font-semibold text-[#183D3D] px-4 border border-[#183D3D]">
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="px-4 border border-[#183D3D]">
-                Your Semester Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Jumlah SKS Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your File IRS Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Action Content
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 border border-[#183D3D]">
-                Your Semester Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Jumlah SKS Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your File IRS Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Action Content
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 border border-[#183D3D]">
-                Your Semester Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Jumlah SKS Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your File IRS Content
-              </td>
-              <td className="px-4 border border-[#183D3D]">
-                Your Action Content
-              </td>
-            </tr>
-            {/* Add more rows if needed */}
-          </tbody>
-        </table>
+      <Button className="w-max h-8 p-1 self-end">Cetak</Button>
+      <div className="flex flex-col gap-2 h-max w-full mb-2 mt-2">
+        <div className="grid grid-cols-2 gap-2">
+          <div className="flex w-full text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+            <span className="w-1/3">Angkatan</span>
+            <span className="w-1/3">Jumlah SKS</span>
+            <span className="w-1/3">File</span>
+            <span className="w-1/3">Action</span>
+          </div>
+          <div className="flex w-full text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+            <span className="w-1/3">Angkatan</span>
+            <span className="w-1/3">JumlahSKS</span>
+            <span className="w-1/3">File</span>
+            <span className="w-1/3">Action</span>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {data.map((item) => (
+            <div
+              key={item.semester}
+              className="flex w-full text-black text-center bg-white drop-shadow-md rounded-md px-4 py-2"
+            >
+              <span className="w-1/3">{item.angkatan}</span>
+              <span className="w-1/3">{item.jumlahSKs}</span>
+              <span className="w-1/3">{item.file}</span>
+              <span className="w-1/3">{item.action}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </BaseLayout>
   );
