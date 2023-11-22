@@ -3,8 +3,7 @@ import BaseLayout_doswal from "@/components/BaseLayout/BaseLayout_doswal";
 import React from "react";
 import { Button } from "flowbite-react";
 import Link from "next/link";
-
-export default function ListPkl() {
+export default function ListSkripsi() {
   return (
     <BaseLayout_doswal>
       <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-2">
@@ -13,16 +12,16 @@ export default function ListPkl() {
           Mahasiswa
         </span>
       </h1>
-      <p className="mt-2 mb-5 text-black">List PKL Mahasiswa</p>
+      <p className="mt-2 mb-5 text-black">List Skripsi Mahasiswa</p>
 
       <Button.Group className="mt-5 gap-2">
         <Link href="/doswal/list/pkl">
-          <Button color="gray" className="bg-[#183D3D] text-white">
-            PKL
-          </Button>
+          <Button color="gray">PKL</Button>
         </Link>
         <Link href="/doswal/list/skripsi">
-          <Button color="gray">Skripsi</Button>
+          <Button className="bg-[#183D3D] text-white" color="gray">
+            Skripsi
+          </Button>
         </Link>
       </Button.Group>
       <div className="flex w-full mt-11 text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">

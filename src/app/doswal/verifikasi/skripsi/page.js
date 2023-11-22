@@ -30,23 +30,17 @@ export default function VerifikasiIrsDoswal() {
           </Button>
         </Link>
       </Button.Group>
-      {/* Table */}
-      <table className="mt-11 w-full">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Nim</th>
-            <th>Angkatan</th>
-            <th>Semester</th>
-            <th>IPK</th>
-            <th>SKSK</th>
-            <th>File</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>{/* Add table rows here if you have data to display */}</tbody>
-      </table>
+      <div className="flex w-full mt-11 text-white bg-[#183D3D] text-center drop-shadow-md rounded-md px-4 py-2">
+        <span className="w-1/3">No</span>
+        <span className="w-1/3">Nama</span>
+        <span className="w-1/3">NIM</span>
+        <span className="w-1/3">Angkatan</span>
+        <span className="w-1/3">Semester</span>
+        <span className="w-1/3">IPK</span>
+        <span className="w-1/3">SKSK</span>
+        <span className="w-1/3">File</span>
+        <span className="w-1/3">Action</span>
+      </div>
     </BaseLayout_doswal>
   );
 }
