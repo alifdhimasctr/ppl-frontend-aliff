@@ -2,12 +2,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BiSearch } from "react-icons/bi"; // Pilih icon untuk PKL
-import { FaRegFileAlt } from "react-icons/fa"; // Pilih icon untuk Skripsi
-import { BsBarChartFill } from "react-icons/bs";
 import { MdDashboard } from "react-icons/md";
+import { BiSolidBookAdd } from "react-icons/bi";
 import { FaArrowsLeftRight } from "react-icons/fa6";
+import { BsFileEarmarkBarGraphFill } from "react-icons/bs";
+import { MdAddHomeWork } from "react-icons/md";
+
 import { RiAccountCircleFill } from "react-icons/ri";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FiCheckCircle } from "react-icons/fi";
+import { FaList } from "react-icons/fa";
+import { FaRegClock } from "react-icons/fa";
 
 const sidebarItems = [
   {
@@ -21,18 +26,18 @@ const sidebarItems = [
     link: "/dpt",
   },
   {
-    name: "PKL",
-    icon: BiSearch,
-    link: "/dpt/pkl",
+    name: "Rekap",
+    icon: MdAddHomeWork,
+    link: "/dpt/rekap",
   },
   {
-    name: "Skripsi",
-    icon: FaRegFileAlt,
-    link: "/dpt/skripsi",
+    name: "List",
+    icon: FaList,
+    link: "/dpt/list",
   },
   {
     name: "Status",
-    icon: BsBarChartFill,
+    icon: FaRegClock,
     link: "/dpt/status",
   },
 ];

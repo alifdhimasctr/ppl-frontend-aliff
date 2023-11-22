@@ -96,57 +96,6 @@ export default function EditProfileDepartemen() {
               />
             </div>
 
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="provinsi" value="Provinsi" />
-              </div>
-              {/* Replace TextInput with a dropdown */}
-              <select
-                id="provinsi"
-                className="mt-1 p-2 border rounded-md w-full"
-                required
-              >
-                {/* Add your dropdown options here */}
-                <option value="">Pilih Provinsi</option>
-                <option value="city1">City 1</option>
-                <option value="city2">City 2</option>
-                <option value="city3">City 3</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="kota" value="Kota" />
-              </div>
-              {/* Replace TextInput with a dropdown */}
-              <select
-                id="kota"
-                className="mt-1 p-2 border rounded-md w-full"
-                required
-              >
-                {/* Add your dropdown options here */}
-                <option value="">Select a city</option>
-                <option value="city1">City 1</option>
-                <option value="city2">City 2</option>
-                <option value="city3">City 3</option>
-                {/* Add more options as needed */}
-              </select>
-            </div>
-
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="alamatasal" value="Alamat" />
-              </div>
-              <textarea
-                id="alamatasal"
-                required
-                className="border rounded-md p-2 w-full"
-                rows="4"
-                placeholder="Masukkan alamat Anda"
-              ></textarea>
-            </div>
-
             <Button type="submit" className="bg-[#183D3D]">
               Simpan
             </Button>
