@@ -1,16 +1,51 @@
 "use client";
+import axios from "axios";
 import { IoChevronBack } from "react-icons/io5";
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
+import {useCookies} from "react-cookie";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [cookies, setCookie] = useCookies(["token"]);
 
-  const handleLogin = () => {
-    console.login("Logging in with:", email, password);
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    console.log(email, password);
+
+    if (!email && !password) alert("Email dan password harus dimasukkan");
+
+    try {
+      const res = await axios.post("http://localhost:4000/login", {
+        email,
+        password,
+      });
+
+      if (res) {
+        const { role } = res.data;
+
+        setCookie("token", res.data.accessToken, {
+          path: "/",
+          maxAge: 3600, // Expires after 1hr
+          sameSite: true,
+        });
+
+        if (role === "admin") {
+          router.push("/opt");
+        } else if (role === "mahasiswa") {
+          router.push("/mhs");
+        }
+      }
+    } catch (error) {
+      console.log(password, email);
+    }
   };
-
   return (
     <div
       className="
