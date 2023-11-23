@@ -39,7 +39,12 @@ const Login = () => {
         if (role === "admin") {
           router.push("/opt");
         } else if (role === "mahasiswa") {
-          router.push("/mhs");
+          if(res.data.islogin === 1){ 
+            router.push("/mhs/editpertama");
+          }
+          else{
+            router.push("/mhs");
+          }
         } else if (role === "dosen") {
           router.push("/doswal");
         }
