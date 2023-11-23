@@ -38,16 +38,10 @@ const Login = () => {
         if (role === "admin") {
           router.push("/opt");
         } else if (role === "mahasiswa") {
-          // Fetch Mahasiswa data based on the email
-          const mahasiswaRes = await axios.get(
-            `http://localhost:4000/mahasiswa/${email}`
-          );
-          const isLogin = mahasiswaRes.data.isLogin;
-
-          if (isLogin) {
-            router.push("/mhs/editpertama/page.js");
+          if (isLogin === 1) {
+            router.push("/mhs/editpertama");
           } else {
-            router.push("/mhs/page.js");
+            router.push("/mhs");
           }
         }
       }
