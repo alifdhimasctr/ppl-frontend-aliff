@@ -3,9 +3,42 @@
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 import React, { useState } from "react";
 import Link from "next/link";
-// import Navbar from "../Component/navbar";
+import axios from "axios";
 
 const Irs = () => {
+  // State variables to manage form data
+  const [semester, setSemester] = useState("");
+  const [sks, setSks] = useState("");
+  const [file, setFile] = useState(null);
+
+  // Function to handle form submission
+  const handleSubmit = async () => {
+    try {
+      // Validate form fields (you can add more validation logic here)
+
+      // Prepare data to be sent to the backend
+      const formData = new FormData();
+      formData.append("semester", semester);
+      formData.append("sks", sks);
+      formData.append("file", file);
+
+      // Make a POST request to the backend API
+      const response = await axios.post("/api/irs", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // Handle success response
+      console.log("IRS entry created successfully:", response.data);
+
+      // You may want to redirect the user to another page or show a success message
+    } catch (error) {
+      // Handle error
+      console.error("Error creating IRS entry:", error);
+    }
+  };
+
   return (
     <BaseLayout>
       <div
