@@ -4,40 +4,45 @@ import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 import React, { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useCookies } from "react-cookie";
 
 const Irs = () => {
-  // State variables to manage form data
-  const [semester, setSemester] = useState("");
-  const [sks, setSks] = useState("");
-  const [file, setFile] = useState(null);
+  const router = useRouter();
+  const [cookies, setCookie] = useCookies(["token"]);
+  const [formData, setFormData] = useState({
+    semester : "",
+    sks : "",
+  });
 
-  // Function to handle form submission
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+
     try {
-      // Validate form fields (you can add more validation logic here)
+      const res = await axios.post("http://localhost:4000/irs", {
+        semester: formData.semester,
+        sks: formData.sks,
+      },
 
-      // Prepare data to be sent to the backend
-      const formData = new FormData();
-      formData.append("semester", semester);
-      formData.append("sks", sks);
-      formData.append("file", file);
+      {headers:{
+        Authorization: `Bearer ${cookies.token}`,
+      }});
+      console.log("Response:", res);
 
-      // Make a POST request to the backend API
-      const response = await axios.post("/api/irs", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      // Handle success response
-      console.log("IRS entry created successfully:", response.data);
-
-      // You may want to redirect the user to another page or show a success message
+      if (res) {
+        router.push("/mhs/irs");
+      }
     } catch (error) {
-      // Handle error
-      console.error("Error creating IRS entry:", error);
+      console.log("Error:",error);
     }
   };
+
+  const handleChange = (event,field) => {
+    const {value} = event.target;
+    setFormData({...formData, [field]: value});
+  };
+
 
   return (
     <BaseLayout>
@@ -64,6 +69,7 @@ const Irs = () => {
             <div className="flex mt-2 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
+                <form onSubmit={handleSubmit}>
                   <div className="mb-4">
                     <label className="label" htmlFor="semester">
                       <span className="label-text text-black text">
@@ -73,6 +79,8 @@ const Irs = () => {
                     <div className="input-box">
                       <select
                         id="semester"
+                        value={formData.semester}
+                        onChange={(event) => handleChange(event, "semester")}
                         className="input input-bordered text-gray-700 bg-white shadow-md w-full"
                       >
                         <option value="" disabled selected>
@@ -97,12 +105,14 @@ const Irs = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label className="label" htmlFor="jumlahsks">
+                    <label className="label" htmlFor="sks">
                       <span className="label-text text-black text">SKS</span>
                     </label>
                     <div className="input-box">
                       <select
-                        id="jumlahsks"
+                        id="sks"
+                        value={formData.sks}
+                        onChange={(event) => handleChange(event, "sks")}
                         className="input  text-gray-700 before:input-bordered bg-white shadow-md w-full"
                       >
                         <option value="" disabled selected>
@@ -138,46 +148,15 @@ const Irs = () => {
 
                   <div className="mb-10"> </div>
                   <div className="flex mb-4 items-center justify-center w-full">
-                    <label
-                      htmlFor="dropzone-file"
-                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-                    >
-                      <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                        <svg
-                          className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 16"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                          />
-                        </svg>
-                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                          <span className="font-semibold">Click to upload</span>{" "}
-                          or drag and drop
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          PDF,PNG, JPG, or GIF (MAX. 800x400px)
-                        </p>
-                      </div>
-                      <input
-                        className="block w-min mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        id="default_size"
-                        type="file"
-                      ></input>
-                    </label>
+                    
                   </div>
                   <div className="mb-1">
-                    <button className="m-1 ml-0 bg-[#183d3d] rounded-md text-white w-20 h-10 ">
+                    <button type="submit" className="m-1 ml-0 bg-[#183d3d] rounded-md text-white w-20 h-10 ">
                       Simpan
                     </button>
-                    <button className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
+                    <button type="cancel" className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
                   </div>
+                </form>
                 </div>
               </div>
             </div>

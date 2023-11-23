@@ -1,8 +1,8 @@
 "use client";
 import axios from "axios";
 import { IoChevronBack } from "react-icons/io5";
-import React, { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
+import React, {useEffect, useState } from "react";
+import {useCookies} from "react-cookie";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -12,6 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [cookies, setCookie] = useCookies(["token"]);
+
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -38,15 +39,13 @@ const Login = () => {
         if (role === "admin") {
           router.push("/opt");
         } else if (role === "mahasiswa") {
-          if (isLogin === 1) {
-            router.push("/mhs/editpertama");
-          } else {
-            router.push("/mhs");
-          }
+          router.push("/mhs");
+        } else if (role === "dosen") {
+          router.push("/doswal");
         }
       }
     } catch (error) {
-      console.error(error);
+      console.log(password, email);
     }
   };
   return (

@@ -3,6 +3,7 @@ import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
 import Image from "next/image";
 
 export default function DashboardMahasiswa() {
+
   return (
     <BaseLayout>
       <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-7">
