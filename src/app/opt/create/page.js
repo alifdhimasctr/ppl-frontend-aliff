@@ -1,28 +1,63 @@
 "use client";
 import BaseLayout_opt from "@/components/BaseLayout/BaseLayout_opt";
 import React, { useState } from "react";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useRouter } from "next/navigation";
 
-const create = () => {
-  const [nim, setNim] = useState("");
-  const [nama, setNama] = useState("");
-  const [angkatan, setAngkatan] = useState("");
-  const [dosenWali, setDosenWali] = useState("");
+const Create = () => {
+  const router = useRouter();
+  const [cookies, setCookie] = useCookies(["token"]);
+  const [formData, setFormData] = useState({
+    NIM: "",
+    nama: "",
+    angkatan: "",
+    iddosen: "",
+    email: "",
+  });
 
-  const handleSubmit = (event) => {
+  const generateRandomEmail = () => {
+    const randomString = Math.random().toString(36).substring(2, 8);
+    return `mahasiswa_${randomString}@example.com`;
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // TODO: handle form submission
-  };
+    try {
+      console.log("Submitting form...");
+      const randomEmail = generateRandomEmail();
+      console.log("Random Email:", randomEmail);
 
-  const generateYearOptions = () => {
-    const currentYear = new Date().getFullYear();
-    const years = [];
-    for (let i = 0; i <= 5; i++) {
-      years.push(currentYear + i);
+      const res = await axios.post(
+        "http://localhost:4000/usersmhs",
+        {
+          NIM: parseInt(formData.NIM),
+          nama: formData.nama,
+          angkatan: parseInt(formData.angkatan),
+          email: formData.email,
+          iddosen: parseInt(formData.iddosen),
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${cookies.token}`,
+          },
+        }
+      );
+
+      console.log("Response:", res);
+
+      if (res) {
+        router.push("/opt/create");
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
-    return years;
   };
 
-  const years = generateYearOptions();
+  const handleChange = (event, field) => {
+    const { value } = event.target;
+    setFormData({ ...formData, [field]: value });
+  };
 
   return (
     <BaseLayout_opt>
@@ -37,7 +72,7 @@ const create = () => {
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <label htmlFor="nim" className="text-black">
+              <label htmlFor="NIM" className="text-black">
                 NIM
               </label>
               <input
@@ -45,8 +80,8 @@ const create = () => {
                 placeholder="Masukkan NIM"
                 type="text"
                 id="nim"
-                value={nim}
-                onChange={(event) => setNim(event.target.value)}
+                value={formData.NIM}
+                onChange={(event) => handleChange(event, "NIM")}
               />
             </div>
             <div className="flex flex-col gap-1">
@@ -58,37 +93,48 @@ const create = () => {
                 placeholder="Masukkan Nama"
                 type="text"
                 id="nama"
-                value={nama}
-                onChange={(event) => setNama(event.target.value)}
+                value={formData.nama}
+                onChange={(event) => handleChange(event, "nama")}
               />
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="angkatan" className="text-black">
                 Angkatan
               </label>
-              <select
+              <input
                 className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
+                placeholder="Masukkan Angkatan"
+                type="text"
                 id="angkatan"
-                value={angkatan}
-                onChange={(event) => setAngkatan(event.target.value)}
-              >
-                <option value="">Pilih Angkatan</option>
-                {years.map((year) => (
-                  <option key={year} value={year}>
-                    {year}
-                  </option>
-                ))}
-              </select>
+                value={formData.angkatan}
+                onChange={(event) => handleChange(event, "angkatan")}
+              />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="dosenWali" className="text-black">
-                Dosen Wali
+              <label htmlFor="iddosen" className="text-black">
+                ID Dosen
               </label>
-              <select className="rounded-md drop-shadow-md text-black border-1 border-gray-300">
-                <option value="">Pilih Dosen Wali</option>
-                <option value="dosenWali">Dosen Wali1</option>
-                <option value="dosenWali">Dosen Wali2</option>
-              </select>
+              <input
+                className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
+                placeholder="Masukkan ID Dosen"
+                type="text"
+                id="iddosen"
+                value={formData.iddosen}
+                onChange={(event) => handleChange(event, "iddosen")}
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="email" className="text-black">
+                Email
+              </label>
+              <input
+                className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
+                placeholder="Masukkan Email"
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={(event) => handleChange(event, "email")}
+              />
             </div>
             <button
               type="submit"
@@ -102,4 +148,5 @@ const create = () => {
     </BaseLayout_opt>
   );
 };
-export default create;
+
+export default Create;

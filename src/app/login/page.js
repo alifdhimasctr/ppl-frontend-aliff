@@ -1,8 +1,8 @@
 "use client";
 import axios from "axios";
 import { IoChevronBack } from "react-icons/io5";
-import React, {useEffect, useState } from "react";
-import {useCookies} from "react-cookie";
+import React, { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -12,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [cookies, setCookie] = useCookies(["token"]);
-
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -39,11 +38,21 @@ const Login = () => {
         if (role === "admin") {
           router.push("/opt");
         } else if (role === "mahasiswa") {
-          router.push("/mhs");
+          // Fetch Mahasiswa data based on the email
+          const mahasiswaRes = await axios.get(
+            `http://localhost:4000/mahasiswa/${email}`
+          );
+          const isLogin = mahasiswaRes.data.isLogin;
+
+          if (isLogin) {
+            router.push("/mhs/editpertama/page.js");
+          } else {
+            router.push("/mhs/page.js");
+          }
         }
       }
     } catch (error) {
-      console.log(password, email);
+      console.error(error);
     }
   };
   return (
