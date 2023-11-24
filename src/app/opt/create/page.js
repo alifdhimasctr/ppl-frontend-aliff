@@ -1,32 +1,47 @@
 "use client";
 import BaseLayout_opt from "@/components/BaseLayout/BaseLayout_opt";
-import React, { useState } from "react";
 import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/navigation";
 
 const Create = () => {
   const router = useRouter();
-  const [cookies, setCookie] = useCookies(["token"]);
-  const [formData, setFormData] = useState({
-    NIM: "",
-    nama: "",
-    angkatan: "",
-    iddosen: "",
-    email: "",
-  });
 
   const generateRandomEmail = () => {
     const randomString = Math.random().toString(36).substring(2, 8);
     return `mahasiswa_${randomString}@example.com`;
   };
 
+  const [cookies, setCookie] = useCookies(["token"]);
+  const [formData, setFormData] = useState({
+    NIM: "",
+    nama: "",
+    angkatan: "",
+    iddosen: "",
+    email: generateRandomEmail(),
+  });
+
+  const [dosenwaliList, setDosenwaliList] = useState([]);
+
+  useEffect(() => {
+    const fetchDosenwaliList = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/dosenwali");
+        setDosenwaliList(response.data);
+      } catch (error) {
+        console.error("Error fetching dosenwali list:", error);
+      }
+    };
+
+    fetchDosenwaliList();
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       console.log("Submitting form...");
-      const randomEmail = generateRandomEmail();
-      console.log("Random Email:", randomEmail);
+      console.log("Random Email:", formData.email);
 
       const res = await axios.post(
         "http://localhost:4000/usersmhs",
@@ -56,7 +71,8 @@ const Create = () => {
 
   const handleChange = (event, field) => {
     const { value } = event.target;
-    setFormData({ ...formData, [field]: value });
+    const newValue = field === "email" ? generateRandomEmail() : value;
+    setFormData({ ...formData, [field]: newValue });
   };
 
   return (
@@ -101,40 +117,44 @@ const Create = () => {
               <label htmlFor="angkatan" className="text-black">
                 Angkatan
               </label>
-              <input
+              <select
                 className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
-                placeholder="Masukkan Angkatan"
-                type="text"
                 id="angkatan"
                 value={formData.angkatan}
                 onChange={(event) => handleChange(event, "angkatan")}
-              />
+              >
+                <option value="">Pilih Tahun Angkatan</option>
+                {Array.from({ length: 5 }, (_, index) => 2021 + index).map(
+                  (year) => (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
+                  )
+                )}
+              </select>
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="iddosen" className="text-black">
                 ID Dosen
               </label>
-              <input
+              <select
                 className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
-                placeholder="Masukkan ID Dosen"
-                type="text"
                 id="iddosen"
                 value={formData.iddosen}
-                onChange={(event) => handleChange(event, "iddosen")}
-              />
-            </div>
-            <div className="flex flex-col gap-1">
-              <label htmlFor="email" className="text-black">
-                Email
-              </label>
-              <input
-                className="rounded-md drop-shadow-md text-black border-1 border-gray-300"
-                placeholder="Masukkan Email"
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={(event) => handleChange(event, "email")}
-              />
+                onChange={(event) => {
+                  formData.iddosen = event.target.value;
+                  console.log(formData.iddosen);
+                }}
+              >
+                <option value="" disabled>
+                  Pilih Dosen Wali
+                </option>
+                {dosenwaliList.map((dosenwali) => (
+                  <option key={dosenwali.id} value={dosenwali.id}>
+                    {dosenwali.nama}
+                  </option>
+                ))}
+              </select>
             </div>
             <button
               type="submit"

@@ -15,13 +15,12 @@ export default function DashboardOperator() {
   const [operatorData, setOperatorData] = useState(null);
   const [cookies, setCookie] = useCookies(["token"]);
 
-
   useEffect(() => {
     axios
-    .get("http://localhost:4000/me", {
-      headers: {
-        Authorization: `Bearer ${cookies.token}`,
-      },
+      .get("http://localhost:4000/me", {
+        headers: {
+          Authorization: `Bearer ${cookies.token}`,
+        },
       })
       .then((response) => {
         console.log(response.data);
@@ -30,12 +29,10 @@ export default function DashboardOperator() {
       .catch((error) => {
         console.error("Error fetching operator data", error);
       });
-    }, []);
-  
-    
-    
-    return (
-      <BaseLayout_dpt>
+  }, []);
+
+  return (
+    <BaseLayout_dpt>
       <h1 className="text-4xl font-semibold text-[#183D3D] mt-5 mb-7">
         Dashboard
         <span className="px-2 py-1 bg-[#183d3d] rounded text-[#f5f5f5] ml-2">
@@ -49,14 +46,12 @@ export default function DashboardOperator() {
           height={80}
           className="dashboard_profil-img"
           alt="profil"
-          />
-          {operatorData && (
+        />
+        {/* {operatorData && (
             <>
               <h1 className=" uppercase text-2xl font-semibold text-white">{operatorData.operator.nama}</h1>
               </>
-          )}
-
-        
+          )} */}
       </div>
       <div className="profil_dashboard-container2">
         <h1 className="text-lg text-black">NIP : 19821462187921389119</h1>
@@ -101,4 +96,4 @@ export default function DashboardOperator() {
       </div>
     </BaseLayout_dpt>
   );
-};
+}
