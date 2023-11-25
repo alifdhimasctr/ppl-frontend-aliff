@@ -30,11 +30,18 @@ const Irs = () => {
       }});
       console.log("Response:", res);
 
-      if (res) {
+      if (res.status === 200) {
+        // Show success alert
+        alert("IRS entry successful!");
         router.push("/mhs/irs");
+      } else {
+        // Show error alert
+        alert("Failed to save IRS entry. Please try again.");
       }
     } catch (error) {
-      console.log("Error:",error);
+      console.log("Error:", error);
+      // Show error alert
+      alert("An error occurred. Please try again.");
     }
   };
 

@@ -1,13 +1,57 @@
 "use client";
 
 import BaseLayout from "@/components/BaseLayout/BaseLayout_mhs";
-import { TextInput } from "flowbite-react";
-import { Input } from "postcss";
 import React, { useState } from "react";
 import Link from "next/link";
-// import Navbar from "../Component/navbar";
-
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useCookies } from "react-cookie";
+//hai
 const Khs = () => {
+  const router = useRouter();
+  const [cookies, setCookie] = useCookies(["token"]);
+  const [formData, setFormData] = useState({
+    semester : "",
+    sks : "",
+    skskumulatif : "",
+    ipsemester : "",
+    ipkumulatif : "",
+  });
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+      
+
+
+    try {
+      const res = await axios.post("http://localhost:4000/khs", {
+        semester: formData.semester,
+        sks: formData.sks,
+        skskumulatif: formData.skskumulatif,
+        ipsemester: formData.ipsemester,
+        ipkumulatif: formData.ipkumulatif
+      },
+
+      {headers:{
+        Authorization: `Bearer ${cookies.token}`,
+      }});
+      console.log("Response:", res);
+
+      if (res) {
+        router.push("/mhs/khs");
+      }
+    } catch (error) {
+      console.log("Error:",error);
+    }
+  };
+
+  const handleChange = (event,field) => {
+    const {value} = event.target;
+    setFormData({...formData, [field]: value});
+  };
+
+
   return (
     <BaseLayout>
       <div
@@ -33,6 +77,7 @@ const Khs = () => {
             <div className="flex mt-2 gap-10   ">
               <div className="flex grow gap-10 bg-white shadow-lg rounded-lg p-6">
                 <div className="w-full h-full">
+                <form onSubmit={handleSubmit}>
                   <div className="mb-4">
                     <label className="label" htmlFor="semester">
                       <span className="label-text text-black text">
@@ -43,6 +88,8 @@ const Khs = () => {
                       <select
                         id="semester"
                         className="input input-bordered bg-white shadow-md w-full"
+                        value={formData.semester}
+                        onChange={(event) => handleChange(event, "semester")}
                       >
                         <option value="" disabled selected>
                           Masukkan Semester Anda
@@ -53,7 +100,7 @@ const Khs = () => {
                         <option value="4">Semester 4</option>
                         <option value="5">Semester 5</option>
                         <option value="6">Semester 6</option>
-                        <option value="7">Semester 7</option>
+                        <option value="7">Semester 7</option> 
                         <option value="8">Semester 8</option>
                         <option value="9">Semester 9</option>
                         <option value="10">Semester 10</option>
@@ -73,6 +120,8 @@ const Khs = () => {
                       <select
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
+                        value={formData.sks}
+                        onChange={(event) => handleChange(event, "sks")}
                       >
                         <option value="" disabled selected>
                           Masukkan Jumlah SKS yang di ambil
@@ -117,6 +166,10 @@ const Khs = () => {
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
                         placeholder="Masukkan Jumlah SKS yang di ambil"
+                        value={formData.skskumulatif}
+                        onChange={(event) => handleChange (event,"skskumulatif")}
+
+                        
                       />
                     </div>
                   </div>
@@ -133,6 +186,8 @@ const Khs = () => {
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
                         placeholder="Masukkan Jumlah SKS yang di ambil"
+                        value={formData.ipsemester}
+                        onChange={(event) => handleChange(event, "ipsemester")}
                       />
                     </div>
                   </div>
@@ -149,6 +204,9 @@ const Khs = () => {
                         id="jumlahsks"
                         className="input input-bordered bg-white shadow-md w-full"
                         placeholder="Masukkan Jumlah SKS yang di ambil"
+                        value={formData.ipkumulatif}
+                        onChange={(event)=> handleChange (event, "ipkumulatif")}
+                        
                       />
                     </div>
                   </div>
@@ -195,6 +253,7 @@ const Khs = () => {
                     </button>
                     <button className="m-1 bg-[#d40808] rounded-md text-white w-20 h-10 ">Batal</button>
                   </div>
+                  </form>
                 </div>
               </div>
             </div>
